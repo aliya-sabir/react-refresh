@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { FaMapMarker } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaMapMarker } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const JobListing = ({ job }) => {
-  const JobListing = ({ job }) => {
-  const [showFullDescription, setShowFullDescription] = useState(false);
-  let description = job.description;
+  const [showFullDescription, setShowFullDescription] = useState(false)
 
-  if(!showFullDescription){
-    description = description.substring(0,90) + '...';
-  }
-}
+  if (!job) return null
+
+  const description =
+    showFullDescription || job.description.length <= 90
+      ? job.description
+      : `${job.description.substring(0, 90)}...`
 
   return (
     <div className='bg-white rounded-xl shadow-md relative'>
@@ -47,7 +47,7 @@ const JobListing = ({ job }) => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default JobListing

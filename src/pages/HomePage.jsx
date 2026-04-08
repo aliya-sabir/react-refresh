@@ -1,0 +1,17 @@
+import Hero from '../components/Hero.jsx'
+import HomeCards from '../components/HomeCards.jsx'
+import ViewAllJobs from '../components/ViewAllJobs.jsx'
+import JobListings from '../components/JobListings.jsx';
+
+const HomePage = () => {
+  return (
+    <>
+    <Hero />
+    <HomeCards />
+    <JobListings />
+    <ViewAllJobs />
+    </>
+  );
+};
+
+export default HomePage
